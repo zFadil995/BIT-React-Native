@@ -24,5 +24,10 @@ namespace BITXamarin
             helloColor = !helloColor;
             helloText.TextColor = helloColor ? Color.Red : Color.Green;
         }
+
+        private void NextButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Next());
+        }
     }
 }

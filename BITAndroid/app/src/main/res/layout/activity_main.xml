@@ -17,6 +17,16 @@
             app:layout_constraintTop_toTopOf="parent" android:id="@+id/helloText" android:textSize="30sp"
             android:textColor="@android:color/black"/>
     <Button
+            android:text="NEXT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nextButton"
+            android:backgroundTint="@android:color/black" android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="150dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="150dp"
+            app:layout_constraintHorizontal_bias="0.478" android:layout_marginTop="48dp"
+            app:layout_constraintTop_toBottomOf="@+id/changeButton"/>
+    <Button
             android:text="CHANGE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

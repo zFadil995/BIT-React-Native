@@ -1,5 +1,6 @@
 package com.example.bitandroid
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         helloText.setTextColor(Color.GREEN)
 
         changeButton.setOnClickListener { changeColor() }
+        nextButton.setOnClickListener { goToNext() }
     }
 
     private fun changeColor() {
@@ -26,5 +28,9 @@ class MainActivity : AppCompatActivity() {
         else {
             helloText.setTextColor(Color.GREEN)
         }
+    }
+
+    private fun goToNext() {
+        startActivity(Intent(this, Next::class.java))
     }
 }
