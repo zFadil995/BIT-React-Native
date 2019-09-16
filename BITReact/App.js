@@ -12,19 +12,19 @@ import {StyleSheet, Text, View, Button} from 'react-native';
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {helloColor: 'green'}
+    this.state = {helloColor: false}
   }
 
   changeColor = () => {
     this.setState({
-      helloColor: 'red'
+      helloColor: !this.state.helloColor
     })
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={[styles.welcome, {color: this.state.helloColor}]}>Hello World!</Text>
+        <Text style={[styles.welcome, {color: this.state.helloColor ? 'red' : 'green'}]}>Hello World!</Text>
         <Button title="CHANGE" color="black" onPress={this.changeColor}></Button>
       </View>
     );

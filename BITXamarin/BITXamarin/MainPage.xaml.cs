@@ -13,6 +13,7 @@ namespace BITXamarin
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private bool helloColor;
         public MainPage()
         {
             InitializeComponent();
@@ -20,7 +21,8 @@ namespace BITXamarin
 
         private void ChangeButtonClicked(object sender, EventArgs e)
         {
-            helloText.TextColor = Color.Red;
+            helloColor = !helloColor;
+            helloText.TextColor = helloColor ? Color.Red : Color.Green;
         }
     }
 }
