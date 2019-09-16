@@ -1,46 +1,30 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import { Navigation } from 'react-native-navigation'
+import Main from "./src/pages/main";
+import Next from "./src/pages/next";
 
-import React, {Component} from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
 
-export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {helloColor: false}
-  }
+export default initialize = () => {
+  Navigation.registerComponent(`com.abc-techgroup.Main`, () => Main);
+  Navigation.registerComponent(`com.abc-techgroup.Next`, () => Next);
 
-  changeColor = () => {
-    this.setState({
-      helloColor: !this.state.helloColor
-    })
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={[styles.welcome, {color: this.state.helloColor ? 'red' : 'green'}]}>Hello World!</Text>
-        <Button title="CHANGE" color="black" onPress={this.changeColor}></Button>
-      </View>
-    );
-  }
+  Navigation.events().registerAppLaunchedListener(() => {
+    Navigation.setRoot({
+      root: {
+        stack: {
+          children: [{
+            component: {
+              name: 'com.abc-techgroup.Main',
+              options: {
+                topBar: {
+                  title: {
+                    text: 'Main'
+                  },
+                }
+              }
+            }
+          }]
+        }
+      }
+    });
+  });
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 30,
-    textAlign: 'center',
-    margin: 10,
-  },
-});

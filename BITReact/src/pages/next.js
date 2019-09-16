@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 
 export default class Next extends Component {
-    static navigationOptions = {
-        title: 'Next',
-    };
-
     constructor() {
         super();
     }
