@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BITAndroid</string>
+    <string name="nextText">NEXT</string>
+    <string name="changeText">CHANGE</string>
 </resources>
