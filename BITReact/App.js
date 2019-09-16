@@ -4,8 +4,8 @@ import Next from "./src/pages/next";
 
 
 export default initialize = () => {
-  Navigation.registerComponent(`com.abc-techgroup.Main`, () => Main);
-  Navigation.registerComponent(`com.abc-techgroup.Next`, () => Next);
+  Navigation.registerComponent(Main.routeName, () => Main);
+  Navigation.registerComponent(Next.routeName, () => Next);
 
   Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
@@ -13,7 +13,7 @@ export default initialize = () => {
         stack: {
           children: [{
             component: {
-              name: 'com.abc-techgroup.Main',
+              name: Main.routeName,
               options: {
                 topBar: {
                   title: {

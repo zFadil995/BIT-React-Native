@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 
 export default class Next extends Component {
+    static routeName = 'com.abc-techgroup.Next'
+
     constructor() {
         super();
     }

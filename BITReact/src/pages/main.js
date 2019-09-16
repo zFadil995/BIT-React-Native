@@ -3,6 +3,8 @@ import { Navigation } from 'react-native-navigation'
 import {StyleSheet, Text, View, Button} from 'react-native';
 
 export default class Main extends Component {
+    static routeName = 'com.abc-techgroup.Main'
+
     constructor() {
         super();
         this.state = {helloColor: false}
