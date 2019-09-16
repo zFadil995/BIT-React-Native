@@ -7,21 +7,25 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button} from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {helloColor: 'green'}
+  }
 
-type Props = {};
-export default class App extends Component<Props> {
+  changeColor = () => {
+    this.setState({
+      helloColor: 'red'
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Hello World!</Text>
+        <Text style={[styles.welcome, {color: this.state.helloColor}]}>Hello World!</Text>
+        <Button title="CHANGE" color="black" onPress={this.changeColor}></Button>
       </View>
     );
   }
@@ -37,7 +41,6 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 30,
     textAlign: 'center',
-    color: 'green',
     margin: 10,
   },
 });

@@ -6,13 +6,21 @@
              mc:Ignorable="d"
              x:Class="BITXamarin.MainPage">
 
-    <StackLayout>
+    <StackLayout
+            Spacing="20"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand">
         <!-- Place new controls here -->
-        <Label Text="Hello World!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand"
-           FontSize="30"
-           TextColor="#00AA55"/>
+        <Label
+            x:Name="helloText"
+            Text="Hello World!" 
+            FontSize="30"
+            TextColor="#00AA55"/>
+        <Button
+            Text="CHANGE"
+            TextColor="White"
+            BackgroundColor="Black"
+            Clicked="ChangeButtonClicked"/>
     </StackLayout>
 
 </ContentPage>

@@ -17,5 +17,10 @@ namespace BITXamarin
         {
             InitializeComponent();
         }
+
+        private void ChangeButtonClicked(object sender, EventArgs e)
+        {
+            helloText.TextColor = Color.Red;
+        }
     }
 }
